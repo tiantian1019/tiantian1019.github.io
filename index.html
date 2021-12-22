@@ -6,7 +6,45 @@
     mf.src = "//cdn.mouseflow.com/projects/9e1b0b99-b93e-4627-af9c-45103c30e7c3.js";
     document.getElementsByTagName("head")[0].appendChild(mf);
   })();
-</script></head>
+</script>
+  
+  <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
+<script type="text/javascript">
+
+  function reDirectFuction() {
+
+    var url4protoA = "protoA.html";
+    var url4protoB = "protoB.html";
+    var url;
+
+
+    var y = Math.random();
+    if (y < 0.5) {
+      y = Math.floor(y);
+      url = url4protoA;
+    }
+    else {
+      y = Math.ceil(y);
+      url = url4protoB;
+    }
+
+
+    if (typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
+    {
+      document.write("redirecting..."); // Don't remove this line or appendChild() will fail because it is called before document.onload to make the redirect as fast as possible. Nobody will see this text, it is only a tech fix.
+      var referLink = document.createElement("a");
+      referLink.href = url;
+      document.body.appendChild(referLink);
+      referLink.click();
+    }
+    else { window.location.replace(url); } // All other browsers
+
+  };
+
+
+
+</script>
+  </head>
 <body>
 <h1>欢迎来到田鑫的网站。
 </h1>
